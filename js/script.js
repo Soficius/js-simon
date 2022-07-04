@@ -1,5 +1,4 @@
-// Visualizzare in pagina 5 numeri casuali  diversi tra loro. Da lì parte un timer di 30 secondi.
-// Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite i prompt().
+
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
 
@@ -24,7 +23,7 @@ function generaNumbers(n,min,max) {
 // * funzione per concatenare gli elmenti dell'array con uno spazip
 function concatArray(arr){
     let result = ''
-    for(let i = 0; i<numbers.length; i++){
+    for(let i = 0; i<arr.length; i++){
         result+= arr[i]+' '
     } 
     return result
@@ -40,11 +39,21 @@ const countdown = setInterval(
         display.innerText = --seconds
         if(seconds === 0){
             clearInterval(countdown)
+            // * rimuovo i numeri allo scadere dek tempo
             memorizeNumbers.innerText=''
+            // * utilizzo la fumzione selftime per rimuovere tutti i numeri prima che esca il prompt in pagina
             setTimeout(()=>{
+                //* chiedo all'utente (per 5 volte) i numeri memorizzati 
+                const guessed = []
                 for(let i = 0; i<5; i++ ){
-                    const ask = prompt('inserisci un numero da 1 a 100')
+                    const response = parseInt(prompt('inserisci un numero da 1 a 100'));
+                    // * verifico quanti numeri ha memorizzato l'utente e me li salvo
+                    if(numbers.includes(response)){
+                        guessed.push(response)
+                    }
                 }
+                //* comunico all'utente quanti numeri ha indovinato
+                alert(`hai indovinato ${guessed.length} numeri ${concatArray(guessed)}`)
             },200)
         }
     }, 
