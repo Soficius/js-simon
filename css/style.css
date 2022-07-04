@@ -1,0 +1,16 @@
+#memorizeNumbers{
+    font-size: 80px;
+    position: fixed;
+    top:50px;
+    left: 50%;
+    transform: translate(-50%, 0)
+}
+#display{
+    font-size: 60px;
+    position: fixed;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%, 0)
+}
+
+ 
