@@ -35,14 +35,20 @@ memorizeNumbers.innerText = concatArray(numbers)
 // * creo il timer di 30 secondi che viene visualizzato in pagina
 let seconds = 30
 display.innerText = seconds
-const countdown = setInterval(function(){
-display.innerText = --seconds
-if(seconds ===0){
-    clearInterval(countdown)
-}
-}, 1000)
+const countdown = setInterval(
+    function(){
+        display.innerText = --seconds
+        if(seconds === 0){
+            clearInterval(countdown)
+            memorizeNumbers.innerText=''
+            setTimeout(()=>{
+                for(let i = 0; i<5; i++ ){
+                    const ask = prompt('inserisci un numero da 1 a 100')
+                }
+            },200)
+        }
+    }, 
+    1000
+)
 
 
-
-// todo dopo 30 secondi deve chiedere all'utente di inserire per 5 volte i numeri che ha visto precedentemente
-// todo dopo che ha inserito i numeri il softaware deve dirgli quante parole ha indovinato

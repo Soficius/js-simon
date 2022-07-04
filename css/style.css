@@ -1,14 +1,21 @@
-#memorizeNumbers{
-    font-size: 80px;
+#display{
+    font-size: 60px;
+    font-weight: bolder;
     position: fixed;
     top:50px;
     left: 50%;
     transform: translate(-50%, 0)
 }
-#display{
-    font-size: 60px;
+#memorizeNumbers{
+    font-size: 80px;
     position: fixed;
     top:40%;
+    left: 50%;
+    transform: translate(-50%, 0)
+}
+h1{
+    position: fixed;
+    top:30%;
     left: 50%;
     transform: translate(-50%, 0)
 }
